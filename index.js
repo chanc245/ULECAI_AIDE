@@ -78,8 +78,8 @@ async function gpt(input) {
     messages: [
       {
         role: 'user',
-        // content: `${input}`
-        content: `please say this is a test`
+        content: `Based on the userinput: ${input} please response towards that`
+        // content: `please say this is a test`
       }
     ],
     model: 'gpt-3.5-turbo-1106',

@@ -1,32 +1,24 @@
 // NORMAL JS FILE
+// let gptRes = ''
 
 $('#commandDiv').terminal({
 
   help: function () {
     this.echo(
-      '\n Commands:' +
-      '\n  help : see list of commands' +
-      '\n  ask type_of_language_model' +
-      '\n  example type_of_language_model' +
-      '\n\n Types of Language Model: ' +
-      '\n  - ngram' +
-      '\n  - rnn' +
-      '\n  - lstm' +
-      '\n  - transformers' +
-
-      '\n\n V example input V' +
-      '\n\n    ask ngram' +
-      '\n\n (hint: case sensitive, please type in lower case)' +
-      '\n'
+      '\n Type: aide "[soemthing you want to ask]"',
+      '\n '
     );
   },
 
-  aide: function (input) {
+  aide: async function (input) {
+    let gptRes = await requestGPT(input)
     this.echo(
       '\nAIDE' +
-      '\n ' + requestGPT(input),
+      '\n ' + gptRes,
+      '\n',
       console.log(`--POSTED requestGPT`)
     );
+    console.log(gptRes)
   },
 
 }, { greetings: 'Welcome. Type \'help\' for command list' });
@@ -49,8 +41,10 @@ async function requestGPT(input) {
     const gptResponse = jsonData.gpt;
     console.log(gptResponse);
 
+
     return gptResponse
   } else {
     return "Error in submitting data."
   }
 }
+
