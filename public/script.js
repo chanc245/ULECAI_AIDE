@@ -23,7 +23,7 @@ $('#commandDiv').terminal({
     console.log(gptRes)
   },
 
-}, { greetings: 'Welcom to AIDE Terminal\nType: aide "soemthing you want to ask" \nType: help for more detial instruction\n' });
+}, { greetings: 'Welcom to AIDE Terminal\nType: aide "something you want to ask" \nType: help for more detail instruction\n' });
 
 async function requestGPT(input) {
   console.log(`--resuptGPT started --input: ${input}`)
