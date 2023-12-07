@@ -5,8 +5,7 @@ $('#commandDiv').terminal({
 
   help: function () {
     this.echo(
-      '\n Type: aide "[soemthing you want to ask]"',
-      '\n '
+      `\n Type: aide "soemthing you want to ask"\n Hint: don't forget ""\n Example input: aide "What does AIDE stands for?"\n`
     );
   },
 
@@ -14,14 +13,13 @@ $('#commandDiv').terminal({
     let gptRes = await requestGPT(input)
     this.echo(
       '\nAIDE' +
-      '\n ' + gptRes,
-      '\n',
+      `\n ${gptRes} \n`,
       console.log(`--POSTED requestGPT`)
     );
     console.log(gptRes)
   },
 
-}, { greetings: 'Welcome. Type \'help\' for command list' });
+}, { greetings: 'Welcom to AIDE Terminal\nType: aide "soemthing you want to ask" \nType: help for more detial instruction\n' });
 
 async function requestGPT(input) {
   console.log(`--resuptGPT started --input: ${input}`)
