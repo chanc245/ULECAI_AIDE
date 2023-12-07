@@ -4,12 +4,16 @@
 $('#commandDiv').terminal({
 
   help: function () {
-    this.echo(
-      `\n Type: aide "soemthing you want to ask"\n Hint: don't forget ""\n Example input: aide "What does AIDE stands for?"\n`
+    this.echo(`
+      \n Type: aide "soemthing you want to ask"
+      \n Hint: don't forget ""
+      \n Example input: aide "What does AIDE stands for?"
+      \n`
     );
   },
 
   aide: async function (input) {
+    this.echo('(it might take up to 10 second for AIDE to process, please be patient c:)');
     let gptRes = await requestGPT(input)
     this.echo(
       '\nAIDE' +
