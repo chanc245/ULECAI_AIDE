@@ -7,7 +7,23 @@ $('#commandDiv').terminal({
     this.echo(`
       \n Type: aide "soemthing you want to ask"
       \n Hint: don't forget ""
-      \n Example input: aide "What does AIDE stands for?"
+      \n Example input 1: aide "What does AIDE stands for?"
+      \n Example input 2: aide "What is AIDE?"
+      \n`
+    );
+  },
+
+  about: function () {
+    this.echo(`
+      \n AIDE is powered by: OpenAI API, gpt-3.5-turbo-1106 
+      \n Read more about OpenAI API: https://platform.openai.com/docs/overview 
+      \n
+      \n Code and designed by Christine Chang
+      \n souce code: https://github.com/chanc245/ULECAI_AIDE 
+      \n other work from me: https://chrisc.bio/ 
+      \n Thank you for visting this site! 
+      \n
+      \n Hope you have a great day! 
       \n`
     );
   },
@@ -23,7 +39,7 @@ $('#commandDiv').terminal({
     console.log(gptRes)
   },
 
-}, { greetings: 'Welcom to AIDE Terminal\nType: aide "something you want to ask" \nType: help for more detail instruction\n' });
+}, { greetings: 'Welcom to AIDE Terminal\nType: aide "something you want to ask" \nType: help for more detail instruction\nType: about for more detail about this page!\n' });
 
 async function requestGPT(input) {
   console.log(`--resuptGPT started --input: ${input}`)
